@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>storTrain demo</title>
+</head>
+
+<body>
+  <input type="text" id="input">
+  <button id="button">send</button>
+  <script src="./dist/storetrain.min.js"></script>
+  <script>
+    const inputValue = document.getElementById('input').value;
+    const button = document.getElementById('button');
+    let st = new StoreTrain.default();
+
+    st.bind({
+      el: '#button',
+      value: {
+        inputName: inputValue,
+      },
+      linkTo: 'https://www.google.com.tw/',
+    });
+
+    let value = st.get('inputName');
+    console.log(value);
+  </script>
+</body>
+
+</html>
